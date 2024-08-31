@@ -23,11 +23,11 @@ int main() {
     for (int i = 0; i < SIZE; i++) {
         total += number[i];
     }
-    //avg = total / 10.0;                       »ó¼ö¸¦ ½Ç¼öÇüÀ¸·Î ÁÖ±â
-    //avg = (float)total / 10;                  º¯¼ö¸¦ ½Ç¼öÇüÀ¸·Î ¹Ù²Ù±â
+    //avg = total / 10.0;                       ìƒìˆ˜ë¥¼ ì‹¤ìˆ˜í˜•ìœ¼ë¡œ ì£¼ê¸°
+    //avg = (float)total / 10;                  ë³€ìˆ˜ë¥¼ ì‹¤ìˆ˜í˜•ìœ¼ë¡œ ë°”ê¾¸ê¸°
     avg = (float)total / SIZE;
 
-    //¹è¿­ÀÇ °ª È°¿ë
+    //ë°°ì—´ì˜ ê°’ í™œìš©
     max = number[0];                          
     min = number[0];
 
@@ -38,7 +38,7 @@ int main() {
     printf("avg = %f, max = %d, min = %d", avg, max, min);
 
     printf("\n");
-    //¹è¿­ÀÇ ÀÎµ¦½º È°¿ë
+    //ë°°ì—´ì˜ ì¸ë±ìŠ¤ í™œìš©
     max = 0;                                 
     min = 0;
 
