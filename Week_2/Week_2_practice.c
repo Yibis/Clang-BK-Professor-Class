@@ -10,16 +10,16 @@ int main() {
 	int minSale = 0, maxSale = 0;
 	int temp;
 
-	printf("»óÇ° °³¼ö(Á¾·ù) ÀÔ·Â(1~100»çÀÌ) : ");
+	printf("ìƒí’ˆ ê°œìˆ˜(ì¢…ë¥˜) ì…ë ¥(1~100ì‚¬ì´) : ");
 	scanf_s("%d", &quantity);
 
-	printf("»óÇ° º° ÀÔ°í¼ö·® ÀÔ·Â : ");
+	printf("ìƒí’ˆ ë³„ ì…ê³ ìˆ˜ëŸ‰ ì…ë ¥ : ");
 	for (int i = 0; i < quantity; i++) {
 		scanf_s("%d", &stock[i]);
 		totalStock += stock[i];
 	}
 
-	printf("»óÇ° º° ÆÇ¸Å¼ö·® ÀÔ·Â : ");
+	printf("ìƒí’ˆ ë³„ íŒë§¤ìˆ˜ëŸ‰ ì…ë ¥ : ");
 	for (int i = 0; i < quantity; i++) {
 		scanf_s("%d", &sale[i]);
 		totalSale += sale[i];
@@ -28,20 +28,20 @@ int main() {
 		if (sale[maxSale] < sale[i]) maxSale = i;
 	}
 
-	printf("\nÀç°í¼ö·® : ");
+	printf("\nì¬ê³ ìˆ˜ëŸ‰ : ");
 	for (int i = 0; i < quantity; i++) {
 		printf("%d ", stock[i] - sale[i]);
 	}
 
 	double saleRatio= ((double)totalSale / totalStock) * 100;
-	printf("\nÃÑ ÆÇ¸Å·® : %d (ÆÇ¸ÅÀ²: %.2f%%)\n", totalSale, saleRatio);
+	printf("\nì´ íŒë§¤ëŸ‰ : %d (íŒë§¤ìœ¨: %.2f%%)\n", totalSale, saleRatio);
 
-	printf("°¡Àå ¸¹ÀÌ ÆÇ¸ÅµÈ »óÇ°: ID %d, ÆÇ¸Å·® %d\n", maxSale + 1, sale[maxSale]);
-	printf("°¡Àå Àû°Ô ÆÇ¸ÅµÈ »óÇ°: ID %d, ÆÇ¸Å·® %d\n", minSale + 1, sale[minSale]);
+	printf("ê°€ì¥ ë§ì´ íŒë§¤ëœ ìƒí’ˆ: ID %d, íŒë§¤ëŸ‰ %d\n", maxSale + 1, sale[maxSale]);
+	printf("ê°€ì¥ ì ê²Œ íŒë§¤ëœ ìƒí’ˆ: ID %d, íŒë§¤ëŸ‰ %d\n", minSale + 1, sale[minSale]);
 
 	for (int i = 0; i < quantity; i++) {
 		if (stock[i] - sale[i] <= 2) {
-			printf("»óÇ° ID %d: Àç°íºÎÁ·(%d)\n", i + 1, stock[i] - sale[i]);
+			printf("ìƒí’ˆ ID %d: ì¬ê³ ë¶€ì¡±(%d)\n", i + 1, stock[i] - sale[i]);
 		}
 	}
 }
