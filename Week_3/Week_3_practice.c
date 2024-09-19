@@ -11,7 +11,7 @@ int main() {
 	int num;
 
 	do {
-		printf("¿øÇÏ´Â ¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä.(1. ÀÔ°í, 2. ÆÇ¸Å, 3. »óÇ°ÇöÈ², 4. Á¾·á)\n");
+		printf("ì›í•˜ëŠ” ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”.(1. ì…ê³ , 2. íŒë§¤, 3. ìƒí’ˆí˜„í™©, 4. ì¢…ë£Œ)\n");
 		scanf_s("%d", &num);
 		printf("\n");
 
@@ -26,10 +26,10 @@ int main() {
 			statusGoods(stock, sale);
 			break;
 		case 4:
-			printf("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.\n");
+			printf("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
 			break;
 		default:
-			printf("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.\n");
+			printf("ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.\n");
 			break;
 		}
 		printf("\n");
@@ -40,28 +40,28 @@ int main() {
 void stockGoods(int* stock) {
 	int num, id, temp;
 
-	printf("ÀÔ°í¼ö·® ÀÔ·Â : ÀüÃ¼ »óÇ° ÀÔ°í¼ö·® ÀÔ·Â 1, °³º° »óÇ° ÀÔ·Â 2¸¦ ¼±ÅÃ\n1 2 ¼±ÅÃ : ");
+	printf("ì…ê³ ìˆ˜ëŸ‰ ì…ë ¥ : ì „ì²´ ìƒí’ˆ ì…ê³ ìˆ˜ëŸ‰ ì…ë ¥ 1, ê°œë³„ ìƒí’ˆ ì…ë ¥ 2ë¥¼ ì„ íƒ\n1 2 ì„ íƒ : ");
 	scanf_s("%d", &num);
 
 	if (num == 1) {
-		printf("»óÇ° º° ÀÔ°í¼ö·® ÀÔ·Â : ");
+		printf("ìƒí’ˆ ë³„ ì…ê³ ìˆ˜ëŸ‰ ì…ë ¥ : ");
 		for (int i = 0; i < GOODS; i++) {
 			scanf_s("%d", &temp);
 			stock[i] += temp;
 		}
 	} else if (num == 2) {
-		printf("»óÇ°ID : ");
+		printf("ìƒí’ˆID : ");
 		scanf_s("%d", &id);
 		if (id <= GOODS || id >= 1) {
-			printf("ÀÔ°í¼ö·® ÀÔ·Â : ");
+			printf("ì…ê³ ìˆ˜ëŸ‰ ì…ë ¥ : ");
 			scanf_s("%d", &temp);
 			stock[id - 1] += temp;
 		}
 		else {
-			printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 		}
 	} else {
-		printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+		printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 	}
 
 }
@@ -69,27 +69,27 @@ void stockGoods(int* stock) {
 void saleGoods(int* sale) {
 	int num, id, temp;
 
-	printf("ÆÇ¸Å¼ö·® ÀÔ·Â : ÀüÃ¼ »óÇ° ÆÇ¸Å¼ö·® ÀÔ·Â 1, °³º° »óÇ° ÀÔ·Â 2¸¦ ¼±ÅÃ\n1 2 ¼±ÅÃ : ");
+	printf("íŒë§¤ìˆ˜ëŸ‰ ì…ë ¥ : ì „ì²´ ìƒí’ˆ íŒë§¤ìˆ˜ëŸ‰ ì…ë ¥ 1, ê°œë³„ ìƒí’ˆ ì…ë ¥ 2ë¥¼ ì„ íƒ\n1 2 ì„ íƒ : ");
 	scanf_s("%d", &num);
 
 	if (num == 1) {
-		printf("»óÇ° º° ÆÇ¸Å¼ö·® ÀÔ·Â : ");
+		printf("ìƒí’ˆ ë³„ íŒë§¤ìˆ˜ëŸ‰ ì…ë ¥ : ");
 		for (int i = 0; i < GOODS; i++) {
 			scanf_s("%d", &temp);
 			sale[i] += temp;
 		}
 	} else if (num == 2) {
-		printf("»óÇ°ID : ");
+		printf("ìƒí’ˆID : ");
 		scanf_s("%d", &id);
 		if (id <= GOODS || id >= 1) {
-			printf("ÆÇ¸Å¼ö·® ÀÔ·Â : ");
+			printf("íŒë§¤ìˆ˜ëŸ‰ ì…ë ¥ : ");
 			scanf_s("%d", &temp);
 			sale[id - 1] += temp;
 		} else {
-			printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 		}
 	} else {
-		printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+		printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 	}
 }
 
@@ -105,20 +105,20 @@ void statusGoods(int* stock, int* sale) {
 		if (sale[maxSale] < sale[i]) maxSale = i;
 	}
 
-	printf("Àç°í¼ö·® : ");
+	printf("ì¬ê³ ìˆ˜ëŸ‰ : ");
 	for (int i = 0; i < GOODS; i++) {
 		printf("%d ", stock[i] - sale[i]);
 	}
 
 	double saleRatio = ((double)totalSale / totalStock) * 100;
-	printf("\nÃÑ ÆÇ¸Å·® : %d (ÆÇ¸ÅÀ²: %.2f%%)\n", totalSale, saleRatio);
+	printf("\nì´ íŒë§¤ëŸ‰ : %d (íŒë§¤ìœ¨: %.2f%%)\n", totalSale, saleRatio);
 
-	printf("°¡Àå ¸¹ÀÌ ÆÇ¸ÅµÈ »óÇ°: ID %d, ÆÇ¸Å·® %d\n", maxSale + 1, sale[maxSale]);
-	printf("°¡Àå Àû°Ô ÆÇ¸ÅµÈ »óÇ°: ID %d, ÆÇ¸Å·® %d\n", minSale + 1, sale[minSale]);
+	printf("ê°€ì¥ ë§ì´ íŒë§¤ëœ ìƒí’ˆ: ID %d, íŒë§¤ëŸ‰ %d\n", maxSale + 1, sale[maxSale]);
+	printf("ê°€ì¥ ì ê²Œ íŒë§¤ëœ ìƒí’ˆ: ID %d, íŒë§¤ëŸ‰ %d\n", minSale + 1, sale[minSale]);
 
 	for (int i = 0; i < GOODS; i++) {
 		if (stock[i] - sale[i] <= 2) {
-			printf("»óÇ° ID %d: Àç°íºÎÁ·(%d)\n", i + 1, stock[i] - sale[i]);
+			printf("ìƒí’ˆ ID %d: ì¬ê³ ë¶€ì¡±(%d)\n", i + 1, stock[i] - sale[i]);
 		}
 	}
 }
