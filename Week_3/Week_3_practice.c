@@ -52,7 +52,7 @@ void stockGoods(int* stock) {
 	} else if (num == 2) {
 		printf("상품ID : ");
 		scanf_s("%d", &id);
-		if (id <= GOODS || id >= 1) {
+		if (id <= GOODS && id >= 1) {
 			printf("입고수량 입력 : ");
 			scanf_s("%d", &temp);
 			stock[id - 1] += temp;
@@ -81,7 +81,7 @@ void saleGoods(int* sale) {
 	} else if (num == 2) {
 		printf("상품ID : ");
 		scanf_s("%d", &id);
-		if (id <= GOODS || id >= 1) {
+		if (id <= GOODS && id >= 1) {
 			printf("판매수량 입력 : ");
 			scanf_s("%d", &temp);
 			sale[id - 1] += temp;
