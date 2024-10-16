@@ -7,8 +7,8 @@ typedef struct point {
 } POINT;
 
 typedef struct {
-	POINT center;	//¿øÀÇ Áß½É
-	double radius;	//¹İÁö¸§
+	POINT center;	//ì›ì˜ ì¤‘ì‹¬
+	double radius;	//ë°˜ì§€ë¦„
 }CIRCLE;
 
 typedef struct rect {
@@ -34,5 +34,5 @@ int main() {
 }
 
 double dist(POINT p1, struct point p2) {
-	return sqrt(pow((p2.x = p1.x), 2) + pow((p2.y - p1.y), 2));
+	return sqrt(pow((p2.x - p1.x), 2) + pow((p2.y - p1.y), 2));
 }
