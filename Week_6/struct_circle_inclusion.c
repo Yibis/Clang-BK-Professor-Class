@@ -7,8 +7,8 @@ typedef struct point {
 } POINT;
 
 typedef struct {
-	POINT center;	//¿øÀÇ Áß½É
-	double radius;	//¹İÁö¸§
+	POINT center;	//ì›ì˜ ì¤‘ì‹¬
+	double radius;	//ë°˜ì§€ë¦„
 }CIRCLE;
 
 typedef struct rect {
@@ -33,21 +33,21 @@ int main() {
 	
 /*	distance = dist(c1.center, point);
 	if (distance <= c1.radius) {
-		printf("¿ø ¾È¿¡ ÀÖ½À´Ï´Ù.\n");
+		printf("ì› ì•ˆì— ìˆìŠµë‹ˆë‹¤.\n");
 	}
 	else {
-		printf("¿ø ¹Û¿¡ ÀÖ½À´Ï´Ù.\n");
+		printf("ì› ë°–ì— ìˆìŠµë‹ˆë‹¤.\n");
 	}*/
 	distance = dist(c2.center, point);
 	if (distance <= c2.radius) {
-		printf("¿ø ¾È¿¡ ÀÖ½À´Ï´Ù.\n");
+		printf("ì› ì•ˆì— ìˆìŠµë‹ˆë‹¤.\n");
 	} else {
-		printf("¿ø ¹Û¿¡ ÀÖ½À´Ï´Ù.\n");
+		printf("ì› ë°–ì— ìˆìŠµë‹ˆë‹¤.\n");
 	}
 
 	return 0;
 }
 
 double dist(POINT p1, POINT p2) {
-	return sqrt(pow((p2.x = p1.x), 2) + pow((p2.y - p1.y), 2));
+	return sqrt(pow((p2.x - p1.x), 2) + pow((p2.y - p1.y), 2));
 }
